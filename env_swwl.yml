@@ -1,0 +1,43 @@
+name: env_swwl
+
+channels:
+  - nodefaults
+  - pytorch
+  - nvidia
+  - conda-forge
+  - pyg
+  - r
+
+dependencies:
+# Basic
+  - python=3
+  - numpy
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.7
+  - pyg
+  - pytorch-sparse 
+  - pytorch-cluster 
+  - pytorch-scatter 
+  - pytorch-spline-conv 
+  - matplotlib
+  - plaid
+  - plotly
+  - pandas
+  - scipy
+  - scikit-learn
+  - scikit-sparse
+  - pip
+  - rpy2
+  - r-robustgasp
+  - r-maxpro
+  - tqdm
+  - pip:
+    - argparse
+    - grakel
+    - networkx
+    - h5py
+    - pot
+    - pyyaml
+

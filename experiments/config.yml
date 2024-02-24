@@ -1,0 +1,55 @@
+datasets:
+  root_Rotor37: PATH_TO_FOLDER
+  root_Rotor37_CM: PATH_TO_FOLDER
+  root_Tensile2d: PATH_TO_FOLDER
+  root_Tensile2d_CM: PATH_TO_FOLDER
+  root_AirfRANS: PATH_TO_FOLDER
+  root_AirfRANS_CM: PATH_TO_FOLDER
+  root_TUDatasets: PATH_TO_FOLDER
+  root_TUDatasets_zip: PATH_TO_FOLDER
+  classification_NSPLITS: 10
+  classification_stratified_split_seed: 42
+results:
+  scores: ./res/scores
+  times: ./res/times
+  distances: ./res/distances
+  gram: ./res/gram
+  figures: ./res/figures
+  wwl_tmp_embeddings: ./res/wwl_tmp/embeddings
+  wwl_tmp_lines: ./res/wwl_tmp/lines
+  scalar_matrices: ./res/scalar_matrices
+  output_scalars: ./res/output_scalars
+  save_scores: True
+  save_valid_scores: True
+embeddings:
+  batch_size_big: 32
+  batch_size_small: 8
+  wwl_er_sinkhorn_lambda: 1e-2
+matrices:
+  save: True
+  load_if_exists: True
+regression:
+  use_input_scalars: True
+optimization:
+  seed: 0
+  gpy:
+    num_restarts: 3
+  rgasp:
+    restarts: 3
+  svc:
+    grid_C_log:
+      lower: -3
+      upper: 3
+      num: 7
+    grid_gammas_log:
+      lower: -4
+      upper: 1
+      num: 6
+    grid_scalar_lengthscales_log:
+      lower: -3
+      upper: 3
+      num: 7
+    nugget: 0.0000001
+    cv_splits: 5
+R:
+  path_to_python: PATH_TO_PYTHON
