@@ -1,7 +1,6 @@
 # This file is subject to the terms and conditions defined in
 # file 'LICENSE.txt', which is part of this source code package.
 
-import numpy as np
 import torch
 from torch_geometric.datasets import TUDataset
 from torch_geometric.loader import DataLoader

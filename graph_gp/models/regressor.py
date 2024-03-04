@@ -5,11 +5,8 @@ import os
 import sys
 
 import numpy as np
-import rpy2.robjects as robjects
 import rpy2.robjects.numpy2ri as numpy2ri
 from rpy2.robjects.packages import importr
-from sklearn.base import clone
-from sklearn.gaussian_process.kernels import Matern
 
 numpy2ri.activate()
 rgasp = importr("RobustGaSP")

@@ -478,7 +478,6 @@ if __name__ == "__main__":
     if kernel in ["swwl", "aswwl", "wwl", "wwl_ER"]:
         import torch
     elif kernel in ["propag"]:
-        from grakel.datasets import fetch_dataset
         from grakel.kernels import PropagationAttr
 
     y, (N_train, N_test) = load_scalars(

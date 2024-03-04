@@ -2,7 +2,6 @@
 # file 'LICENSE.txt', which is part of this source code package.
 
 import numpy as np
-import ot
 from ot import dist, emd2, fused_gromov_wasserstein2, sinkhorn
 from scipy.spatial.distance import pdist, squareform
 from sklearn.metrics import pairwise_distances

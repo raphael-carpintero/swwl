@@ -2,14 +2,11 @@
 # file 'LICENSE.txt', which is part of this source code package.
 
 import itertools
-import os
-import sys
 
 import numpy as np
 from sklearn.base import clone
-from sklearn.gaussian_process.kernels import Matern
 from sklearn.metrics import accuracy_score, make_scorer
-from sklearn.model_selection import GridSearchCV, ParameterGrid, StratifiedKFold
+from sklearn.model_selection import ParameterGrid, StratifiedKFold
 from sklearn.model_selection._validation import _fit_and_score
 from sklearn.svm import SVC
 

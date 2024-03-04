@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import torch
 from plaid.containers.dataset import Dataset
-from plaid.containers.sample import Sample
 from sklearn.preprocessing import StandardScaler
 from torch_geometric.data import Data
 from torch_geometric.loader import DataLoader

@@ -2,15 +2,28 @@
 # file 'LICENSE.txt', which is part of this source code package.
 
 import argparse
-import itertools
-import os
 import sys
 import time
 
 import numpy as np
 import yaml
 from sklearn.metrics import accuracy_score, matthews_corrcoef
-from utils import *
+from utils import (
+    create_if_not_exists,
+    fuse_labels_with_grakel_graphs,
+    load_matrices,
+    load_times,
+    prefix_filenames,
+    read_just_node_labels,
+    renumber_nodes_to_start_at_one,
+    save_matrices,
+    save_scores_for_one_output,
+    save_times,
+    save_times_training_for_one_output,
+    suffix_matrices_filenames,
+    suffix_scores_filenames,
+    suffix_times_filenames,
+)
 
 from graph_gp.models import SVC_precomputed_distances, SVC_precomputed_Gram
 from graph_gp.splitters import split_train_test_indices_stratified_fold

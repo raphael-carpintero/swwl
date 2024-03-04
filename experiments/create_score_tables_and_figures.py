@@ -1,14 +1,17 @@
 # This file is subject to the terms and conditions defined in
 # file 'LICENSE.txt', which is part of this source code package.
 
-import itertools
 import os
-import pickle
 
 import matplotlib.pyplot as plt
 import numpy as np
 import yaml
-from utils import *
+from utils import (
+    create_if_not_exists,
+    load_scores_for_one_output,
+    prefix_filenames,
+    suffix_scores_filenames,
+)
 
 plt.rcParams.update(
     {
@@ -17,7 +20,6 @@ plt.rcParams.update(
         "font.sans-serif": "Helvetica",
     }
 )
-import matplotlib as mpl
 
 
 def create_table_scores_classification(

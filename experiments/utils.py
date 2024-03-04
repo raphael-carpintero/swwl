@@ -299,7 +299,7 @@ def load_times(root_filenames: str, suffix_times: str):
     Returns:
         times_out (dict): The dict representing the embedding+distance/Gram matrices times. If not found, returns None.
     """
-    filename_times = "times_matrices" + suffix_times + f".pkl"
+    filename_times = "times_matrices" + suffix_times + ".pkl"
     file_times = os.path.join(root_filenames, filename_times)
     times = None
     if os.path.exists(file_times):
@@ -386,12 +386,12 @@ def save_matrices(
     """
     letter = "K" if kind == "gram" else "D"
     if format == "npy":
-        filename = os.path.join(root_filenames, letter + suffix_matrices + f".npy")
+        filename = os.path.join(root_filenames, letter + suffix_matrices + ".npy")
         arr = np.stack(matrices)
         with open(filename, "wb") as f:
             np.save(f, arr)
     elif format == "csv":
-        filename = os.path.join(root_filenames, letter + suffix_matrices + f".csv")
+        filename = os.path.join(root_filenames, letter + suffix_matrices + ".csv")
         arr = np.concatenate(matrices)
         df = pd.DataFrame(arr)
         df.to_csv(filename, header=False, index=False)
@@ -420,7 +420,7 @@ def load_matrices(
     """
     letter = "K" if kind == "gram" else "D"
     if format == "npy":
-        filename = os.path.join(root_filenames, letter + suffix_matrices + f".npy")
+        filename = os.path.join(root_filenames, letter + suffix_matrices + ".npy")
         matrices = None
         if os.path.exists(filename):
             with open(filename, "rb") as f:
@@ -428,7 +428,7 @@ def load_matrices(
                 matrices = [M for M in arr]
         return matrices
     elif format == "csv":
-        filename = os.path.join(root_filenames, letter + suffix_matrices + f".csv")
+        filename = os.path.join(root_filenames, letter + suffix_matrices + ".csv")
         matrices_arr = pd.read_csv(filename, header=None).to_numpy()
         n_matrices = matrices_arr.shape[0] // matrices_arr.shape[1]
         matrices = np.split(matrices_arr, n_matrices)
