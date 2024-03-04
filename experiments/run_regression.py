@@ -271,10 +271,10 @@ def compute_gram_matrices(
 
     # Step 1: for each hyperparameter tuple, compute the Gram matrices directly.
     if kernel == "propag":
-        tmax = hparams["pk_tmax"][0]
+        t_max = hparams["pk_tmax"][0]
         w = hparams["pk_w"][0]
         start_time_gram = time.time()
-        gk = PropagationAttr(normalize=True, t_max=t, w=w, random_state=seed)
+        gk = PropagationAttr(normalize=True, t_max=t_max, w=w, random_state=seed)
         K = gk.fit_transform(G)
         time_gram = time.time() - start_time_gram
     else:

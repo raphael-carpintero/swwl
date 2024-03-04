@@ -218,8 +218,8 @@ def plot_score_against_P(
             else:
                 scores = load_scores_for_one_output(root_scores, suffix_scores, out=0)
                 if scores is not None:
-                    means[i, j] = scores[f"mean_{score}"]
-                    stds[i, j] = scores[f"std_{score}"]
+                    means_for_Q.append(scores[f"mean_{score}"])
+                    stds_for_Q.append(scores[f"std_{score}"])
                 else:
                     print(f"Error: missing scores for P={P}, Q={Q}.")
                     return

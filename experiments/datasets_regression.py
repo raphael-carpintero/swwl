@@ -52,7 +52,7 @@ def load_Rotor37(
             )
             df = pd.read_csv(filename, sep=",")
             scalars_i = df[output_scalar_names].to_numpy().flatten()
-            train_output_scalars[i] = scalars_i
+            y_scalars_train[i] = scalars_i
         train_data = {"y_scalars": y_scalars_train}
 
         y_scalars_test = np.zeros((N_test, len(output_scalar_names)))
@@ -62,7 +62,7 @@ def load_Rotor37(
             )
             df = pd.read_csv(filename, sep=",")
             scalars_i = df[output_scalar_names].to_numpy().flatten()
-            train_output_scalars[i] = scalars_i
+            y_scalars_test[i] = scalars_i
         test_data = {"y_scalars": y_scalars_test}
 
         if fuse_train_test:
@@ -192,7 +192,7 @@ def load_Tensile2d(
             )
             df = pd.read_csv(filename, sep=",")
             scalars_i = df[output_scalar_names].to_numpy().flatten()
-            train_output_scalars[i] = scalars_i
+            y_scalars_train[i] = scalars_i
         train_data = {"y_scalars": y_scalars_train}
 
         y_scalars_test = np.zeros((N_test, len(output_scalar_names)))
@@ -202,7 +202,7 @@ def load_Tensile2d(
             )
             df = pd.read_csv(filename, sep=",")
             scalars_i = df[output_scalar_names].to_numpy().flatten()
-            train_output_scalars[i] = scalars_i
+            y_scalars_test[i] = scalars_i
         test_data = {"y_scalars": y_scalars_test}
 
         if fuse_train_test:
@@ -333,7 +333,7 @@ def load_AirfRANS(
             )
             df = pd.read_csv(filename, sep=",")
             scalars_i = df[output_scalar_names].to_numpy().flatten()
-            train_output_scalars[i] = scalars_i
+            y_scalars_train[i] = scalars_i
         train_data = {"y_scalars": y_scalars_train}
 
         y_scalars_test = np.zeros((N_test, len(output_scalar_names)))
@@ -343,7 +343,7 @@ def load_AirfRANS(
             )
             df = pd.read_csv(filename, sep=",")
             scalars_i = df[output_scalar_names].to_numpy().flatten()
-            train_output_scalars[i] = scalars_i
+            y_scalars_test[i] = scalars_i
         test_data = {"y_scalars": y_scalars_test}
 
         if fuse_train_test:
